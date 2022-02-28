@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "252952212665",
+    "project_id": "noti-i-a6fa0",
+    "storage_bucket": "noti-i-a6fa0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252952212665:android:34e3227560ff778bb05768",
+        "android_client_info": {
+          "package_name": "com.notii.cashnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252952212665-3heoa7691pfb16kafa0rn86nls5pts8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtuT1phJxJOUIb3Y2dKjJ5oEL8xUKCFug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252952212665-3heoa7691pfb16kafa0rn86nls5pts8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

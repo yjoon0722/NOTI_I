@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/894268958/android.iml" filepath="$PROJECT_DIR$/.idea/modules/894268958/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2069151056/android.flutter_inappwebview.iml" filepath="$PROJECT_DIR$/.idea/modules/-2069151056/android.flutter_inappwebview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-111127571/android.flutter_web_browser.iml" filepath="$PROJECT_DIR$/.idea/modules/-111127571/android.flutter_web_browser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1926130985/android.permission_handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1926130985/android.permission_handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/162577721/android.shared_preferences_android.iml" filepath="$PROJECT_DIR$/.idea/modules/162577721/android.shared_preferences_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/29737786/android.webview_flutter_android.iml" filepath="$PROJECT_DIR$/.idea/modules/29737786/android.webview_flutter_android.iml" />
+    </modules>
+  </component>
+</project>

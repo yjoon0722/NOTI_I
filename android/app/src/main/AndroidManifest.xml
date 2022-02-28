@@ -1,0 +1,142 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.notii.cashnote">
+    <uses-permission android:name="android.permission.INTERNET"/>
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />-->
+
+   <application
+        android:label="노티아이"
+        android:name="${applicationName}"
+       android:icon="@mipmap/launcher_icon"
+       android:usesCleartextTraffic="true">
+
+       <!-- TODO STEP 5-->
+       <!-- Add the asset statements you just added in the strings.xml -->
+       <!-- We have now established a relationship from the Android application to the website -->
+       <meta-data
+           android:name="asset_statements"
+           android:resource="@string/asset_statements"/>
+       <activity
+           android:name=".MainActivity"
+           android:exported="true"
+           android:launchMode="singleTop"
+           android:theme="@style/LaunchTheme"
+           android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+           android:hardwareAccelerated="true"
+           android:windowSoftInputMode="adjustResize">
+           <!-- Specifies an Android theme to apply to this Activity as soon as
+                the Android process has started. This theme is visible to the user
+                while the Flutter UI initializes. After that, this theme continues
+                to determine the Window background behind the Flutter UI. -->
+           <meta-data
+               android:name="io.flutter.embedding.android.NormalTheme"
+               android:resource="@style/NormalTheme"
+               />
+           <intent-filter>
+               <action android:name="android.intent.action.MAIN"/>
+               <category android:name="android.intent.category.LAUNCHER"/>
+           </intent-filter>
+       </activity>
+
+       <!-- Add this block of code which will be your TWA that opens up Games-->
+       <!-- This block of code tells Android that TWA will, by default open up skillclash.com -->
+       <activity
+           android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
+           android:exported="true">
+
+           <!-- Edit android:value to change the url opened by the Trusted Web Activity -->
+           <meta-data
+               android:name="android.support.customtabs.trusted.DEFAULT_URL"
+               android:value="https://dev.cashnote.tdi9.com/"/>
+
+           <!--
+             This intent-filter allows the Trusted Web Activity to handle Intents to open
+             skillclash.com.
+           -->
+           <intent-filter
+               android:autoVerify="true">
+               <action android:name="android.intent.action.VIEW"/>
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.BROWSABLE"/>
+
+               <!-- Edit android:host to handle links to the target URL-->
+               <data
+                   android:scheme="https"
+                   android:host="dev.cashnote.tdi9.com/"/>
+           </intent-filter>
+       </activity>
+
+       <activity
+           android:name=".NativeWebView2"
+           android:screenOrientation="portrait"
+           android:exported="true"
+           android:launchMode="singleTop"
+           android:theme="@style/Theme.AppCompat.NoActionBar"
+           android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+           android:hardwareAccelerated="true"
+           android:windowSoftInputMode="adjustResize"/>
+       <provider
+           android:name="androidx.core.content.FileProvider"
+           android:authorities="${applicationId}.fileprovider"
+           android:exported="false"
+           android:grantUriPermissions="true">
+           <meta-data
+               android:name="android.support.FILE_PROVIDER_PATHS"
+               android:resource="@xml/file_path" />
+       </provider>
+
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+
+    <queries>
+        <package android:name="com.shcard.smartpay" /> <!-- 신한카드 -->
+        <package android:name="com.shinhancard.smartshinhan" /> <!-- 신한카드 -->
+        <package android:name="kr.co.samsungcard.mpocket" /> <!-- 삼성카드 -->
+        <package android:name="com.kbcard.cxh.appcard" /> <!-- KB카드 -->
+        <package android:name="com.kbstar.liivbank" /> <!-- KB카드 -->
+        <package android:name="com.kbstar.reboot" /> <!-- KB카드 New Liib -->
+        <package android:name="nh.smart.nhallonepay" /> <!-- NH카드 -->
+        <package android:name="com.hyundaicard.appcard" /> <!-- 현대카드 -->
+        <package android:name="com.lge.lgpay" /> <!-- 엘지페이 (삼성, KB) -->
+        <package android:name="com.wooricard.smartapp" /> <!-- 우리 WON 뱅킹 -->
+        <package android:name="com.wooribank.smart.npib" /> <!-- 우리 WON 뱅킹 -->
+        <package android:name="kvp.jjy.MispAndroid320" /> <!-- BC카드 -->
+        <package android:name="com.hanaskcard.paycla" /> <!-- 하나카드 -->
+        <package android:name="kr.co.hanamembers.hmscustome" /> <!-- 하나카드(멤버스결제) -->
+        <package android:name="com.lcacApp" /> <!-- 롯데카드 -->
+        <package android:name="kr.co.citibank.citimobile" /> <!-- 씨티카드 -->
+        <package android:name="com.hanaskcard.rocomo.potal" /> <!-- 하나카드(인증) -->
+        <package android:name="com.lumensoft.touchenappfree" /> <!-- 공동인증서 -->
+        <package android:name="com.TouchEn.mVaccine.webs" /> <!-- TouchEn mVaccine -->
+        <package android:name="kr.co.shiftworks.vguardweb" /> <!-- V-Guard -->
+        <package android:name="com.ahnlab.v3mobileplus" /> <!-- V3 -->
+        <package android:name="com.kftc.bankpay.android" /> <!-- 금결원 -->
+        <package android:name="viva.republica.toss" /> <!-- 토스 -->
+        <package android:name="com.nhn.android.search" /> <!-- 네이버페이 -->
+        <package android:name="com.lottemembers.android" /> <!-- 엘페이 -->
+        <package android:name="com.ssg.serviceapp.android.egiftcertificate" /> <!-- SSG페이 -->
+        <package android:name="com.nhnent.payapp" /> <!-- 페이코 -->
+        <package android:name="com.kakao.talk" /> <!-- 카카오페이 -->
+        <package android:name="com.samsung.android.spay" /> <!-- 삼성페이 -->
+        <package android:name="com.samsung.android.spaylite" /> <!-- 삼성페이 미니 -->
+        <package android:name="com.mysmilepay.app" /> <!-- 스마일페이 -->
+        <package android:name="uplus.membership" /> <!-- 휴대폰결제 (LGU) -->
+        <package android:name="com.tmoney.inapp" /> <!-- 티머니 인앱결제모듈 -->
+        <package android:name="com.tmoney.nfc_pay" /> <!-- 티머니 NFC -->
+        <package android:name="com.ebcard.cashbeeinapp" /> <!-- 캐시비 인앱 -->
+        <package android:name="com.sktelecom.tauth" /> <!-- KCB 휴대폰 본인인증 (SKT) -->
+        <package android:name="com.lguplus.smartotp" /> <!-- KCB 휴대폰 본인인증 (LGU) -->
+        <package android:name="com.kt.ktauth" /> <!-- KCB 휴대폰 본인인증 (KT) -->
+
+        <package android:name="com.lotte.lpay" /> <!-- L.pay -->
+        <package android:name="com.wooricard.wpay" /> <!-- 우리페이 -->
+
+    </queries>
+</manifest>
